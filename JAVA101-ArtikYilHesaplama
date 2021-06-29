@@ -1,0 +1,22 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int leapYear;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Yıl girin: ");
+        leapYear = input.nextInt();
+
+        if (leapYear % 400 == 0) {
+            System.out.println("Doğru " + leapYear + " bir artık yıldır.");
+        }
+        else if (leapYear % 4 == 0 && leapYear % 100 != 0) {
+            System.out.println("Doğru " + leapYear + " bir artık yıldır.");
+        }
+        else {
+            System.out.println("Yanlış " + leapYear + " bir artık yıl değildir.");
+        }
+    }
+}
