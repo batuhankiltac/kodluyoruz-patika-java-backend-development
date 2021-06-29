@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        int mat , fiz, kim, tur, tar, muz;
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Matematik notunu girin: ");
+        mat = input.nextInt();
+
+        System.out.print("Fizik notunu girin: ");
+        fiz = input.nextInt();
+
+        System.out.print("Kimya notunu girin: ");
+        kim = input.nextInt();
+
+        System.out.print("Türkçe notunu girin: ");
+        tur = input.nextInt();
+
+        System.out.print("Tarih notunu girin: ");
+        tar = input.nextInt();
+
+        System.out.print("Müzik notunu girin: ");
+        muz = input.nextInt();
+
+        int ortalama = (mat + fiz + kim + tur + tar + muz) / 6;
+        System.out.println("Not ortalaman: " + ortalama);
+        String sonuc = (ortalama >= 60) ? (ortalama + " ile geçtin.") : (ortalama + " ile kaldın.");
+        System.out.println(sonuc);
+    }
+}
