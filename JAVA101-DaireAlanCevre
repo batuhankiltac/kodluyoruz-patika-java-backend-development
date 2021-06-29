@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        int r;
+        double pi = 3.14;
+        double alan;
+        double cevre;
+        double a;
+        double dilim;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Yarı çap değeri girin (cm): ");
+        r = input.nextInt();
+
+        System.out.print("Dilim değeri girin (cm): ");
+        a = input.nextDouble();
+
+        alan = (pi * r * r);
+        System.out.println("Daire alan ölçüsü (cm): " + alan);
+
+        cevre = (2 * pi * r);
+        System.out.println("Daire çevre ölçüsü (cm): " + cevre);
+
+        dilim =  (pi * (r*r) * a) / 360;
+        System.out.println("Dilim alan ölçüsü (cm): " + dilim);
+    }
+}
