@@ -1,0 +1,19 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int a;
+        int b;
+        double hipo;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("A kenarı için bir değer girin: ");
+        a = input.nextInt();
+        System.out.print("B kenarı için bir değer girin: ");
+        b = input.nextInt();
+
+        hipo = Math.sqrt((a*a) + (b*b));
+        System.out.print("Hipotenüs: " + hipo);
+    }
+}
