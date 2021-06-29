@@ -1,0 +1,34 @@
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Dizinin boyutunu giriniz: ");
+        int n = input.nextInt();
+
+        int[] list = new int[n];
+        System.out.println("Dizinin elemanlarını giriniz.");
+
+        for (int i = 0; i < n; i++) {
+            System.out.print((i + 1) + ". eleman: ");
+            list[i] = input.nextInt();
+        }
+
+        int tmp = 0;
+        for (int i = 0; i < n-1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (list[j] < list[i]) {
+                    tmp = list[i];
+                    list[i] = list[j];
+                    list[j] = tmp;
+                }
+            }
+        }
+        System.out.print("Sıralama: ");
+        for(int i : list){
+            System.out.print(i + " ");
+        }
+    }
+}
