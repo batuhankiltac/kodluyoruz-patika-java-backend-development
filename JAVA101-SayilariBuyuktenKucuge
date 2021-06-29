@@ -1,0 +1,48 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int a;
+        int b;
+        int c;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("1. sayıyı girin: ");
+        a = input.nextInt();
+
+        System.out.print("2. sayıyı girin: ");
+        b = input.nextInt();
+
+        System.out.print("3. sayıyı girin: ");
+        c = input.nextInt();
+
+        if (a > b && a > c) {
+            System.out.println(a + ", " + b + " ve " + c + "' den büyüktür.");
+            if (b > c) {
+                System.out.println(b + " büyüktür " + c);
+            }
+            else {
+                System.out.println(c + " büyüktür " + b);
+            }
+        }
+        else if (b > a && b > c) {
+            System.out.println(b + ", " + a + " ve " + c + "' den büyüktür.");
+            if (a > c) {
+                System.out.println(a + " büyüktür " + c);
+            }
+            else {
+                System.out.println(c + " büyüktür " + a);
+            }
+        }
+        else if (c > a && c > b) {
+            System.out.println(c + ", " + a + " ve " + b + "'den büyüktür.");
+            if (a > b) {
+                System.out.println(a + " büyüktür " + b);
+            }
+            else {
+                System.out.println(b + " büyüktür " + a);
+            }
+        }
+    }
+}
