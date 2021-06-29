@@ -1,0 +1,50 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int gun;
+        int ay;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Doğduğunuz GÜN'Ü giriniz: ");
+        gun = input.nextInt();
+
+        System.out.print("Doğduğunuz AY'I giriniz: ");
+        ay = input.nextInt();
+
+        if (ay == 1 && gun <= 22) {
+            System.out.println("Oğlak burcu");
+        }
+        else if (ay == 1 && gun > 22){
+            System.out.println("Kova burcu");
+        }
+        else if (ay == 2 && gun <= 19){
+            System.out.println("Kova burcu");
+        }
+        else if (ay == 2 && gun > 19){
+            System.out.println("Balık burcu");
+        }
+        else if (ay == 3 && gun <= 20){
+            System.out.println("Balık burcu");
+        }
+        else if (ay == 3 && gun > 20){
+            System.out.println("Koç burcu");
+        }
+        else if (ay == 4 && gun <= 20){
+            System.out.println("Koç burcu");
+        }
+        else if (ay == 4 && gun > 20){
+            System.out.println("Boğa burcu");
+        }
+        else if (ay == 5 && gun <= 21){
+            System.out.println("Boğa burcu");
+        }
+        else if (ay == 5 && gun > 21){
+            System.out.println("İkizler burcu");
+        }
+        else if (ay == 6 && gun <= 22){
+            System.out.println("İkizler burcu");
+        }
+    }
+}
