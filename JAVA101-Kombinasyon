@@ -1,0 +1,41 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int n;
+        int m;
+
+        int i;
+        int j;
+        int k;
+
+        int nf = 1;
+        int mf = 1;
+        int df = 1;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("n değerini girin: ");
+        n = input.nextInt();
+
+        System.out.print("m değerini girin: ");
+        m = input.nextInt();
+
+        int x = (n - m);
+
+        for (i = 1; i <= n; i++) {
+            nf *= i;
+        }
+
+        for (j = 1; j <= m; j++) {
+            mf *= j;
+        }
+
+        for (k = 1; k <= x; k++) {
+            df *= k;
+        }
+
+        int C = nf / (mf * (df));
+        System.out.println("C("+ n + "," + m + ") = " + C);
+    }
+}
