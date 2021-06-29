@@ -1,0 +1,17 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        double kdvHaricTutar;
+        double kdvOrani = 1.18;
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Tutar girin (KDV Hariç): ");
+        kdvHaricTutar = input.nextDouble();
+
+        double kdvDahilTutar = kdvHaricTutar * kdvOrani;
+
+        System.out.println("Toplam (KDV Dahil): " + kdvDahilTutar);
+    }
+}
