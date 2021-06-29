@@ -1,0 +1,42 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        double armutFiyat = 2.14;
+        double elmaFiyat = 3.67;
+        double domatesFiyat = 1.11;
+        double muzFiyat = 0.95;
+        double patlicanFiyat = 5.00;
+
+        double armutKg;
+        double elmaKg;
+        double domatesKg;
+        double muzKg;
+        double patlicanKg;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Ne kadar armut almak istersin?(kg): ");
+        armutKg = input.nextInt();
+        System.out.print("Ne kadar elma almak istersin?(kg): ");
+        elmaKg = input.nextInt();
+        System.out.print("Ne kadar domates almak istersin?(kg): ");
+        domatesKg = input.nextInt();
+        System.out.print("Ne kadar muz almak istersin?(kg): ");
+        muzKg = input.nextInt();
+        System.out.print("Ne kadar patlıcan almak istersin?(kg): ");
+        patlicanKg = input.nextInt();
+
+        double armutToplam = armutFiyat * armutKg;
+        double elmaToplam = elmaFiyat * elmaKg;
+        double domatesToplam = domatesFiyat * domatesKg;
+        double muzToplam = muzFiyat * muzKg;
+        double patlicanToplam = patlicanFiyat * patlicanKg;
+
+        double genelToplam;
+
+        genelToplam = (armutToplam + elmaToplam + domatesToplam + muzToplam + patlicanToplam);
+        System.out.println("Toplam tutar(TL): " + genelToplam);
+    }
+}
