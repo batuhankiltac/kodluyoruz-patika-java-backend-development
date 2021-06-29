@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        double boy;
+        int kilo;
+        double vucutKitle;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Boyunuz (metre cinsinden): ");
+        boy = input.nextDouble();
+
+        System.out.print("Kilonuz: ");
+        kilo = input.nextInt();
+
+        vucutKitle = (kilo / (boy * boy));
+        System.out.print("Vücut kitle indeksiniz: " + vucutKitle);
+    }
+}
