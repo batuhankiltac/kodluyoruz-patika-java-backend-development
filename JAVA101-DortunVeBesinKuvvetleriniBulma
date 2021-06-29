@@ -1,0 +1,26 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int i = 1;
+        int j = 1;
+        int n;
+        int m;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("4'ün kuvvetleri için bir değer girin: ");
+        n = input.nextInt();
+
+        for (i = 1; i < n; i *= 4) {
+            System.out.println("4'ün kuvvetleri: " + i);
+        }
+
+        System.out.print("5'in kuvvetleri için bir değer girin: ");
+        m = input.nextInt();
+
+        for (j = 1; j < m; j *= 5) {
+            System.out.println("5'in kuvvetleri: " + j);
+        }
+    }
+}
