@@ -1,0 +1,58 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int age;
+        int distance;
+        int check;
+        int total;
+        int sale10, sale20, sale30, sale50, sale70;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Yaşınızı girin: ");
+        age = input.nextInt();
+
+        System.out.print("Mesafe girin (km): ");
+        distance = input.nextInt();
+
+        System.out.print("Yolculuk tipini girin (1 => Tek Yön , 2 => Gidiş Dönüş): ");
+        check = input.nextInt();
+
+        total = distance * 10;
+        sale10 = (total * (100 - 10) / 100);
+        sale20 = (total * (100 - 20) / 100);
+        sale30 = (total * (100 - 30) / 100);
+        sale50 = (total * (100 - 50) / 100);
+        sale70 = (total * (100 - 70) / 100);
+
+
+        while (check >= 3) {
+            System.out.println("Hatalı Veri Girdiniz !");
+            System.out.println("Yolculuk tipini girin (1 => Tek Yön , 2 => Gidiş Dönüş ): ");
+            check = input.nextInt();
+        }
+
+        if (age < 12 && check == 1) {
+            System.out.println("Ödenecek tutar (TL): " + sale50);
+        }
+        else if (age < 12 && check == 2) {
+            System.out.println("Ödenecek tutar (TL): " + sale70);
+        }
+        else if (age >= 12 && age <= 24 && check == 1) {
+            System.out.println("Ödenecek tutar (TL): " + sale10);
+        }
+        else if (age >= 12 && age <= 24 && check == 2) {
+            System.out.println("Ödenecek tutar (TL): " + sale30);
+        }
+        else if (age >= 65 && check == 1) {
+            System.out.println("Ödenecek tutar (TL): " + sale30);
+        }
+        else if (age >= 65 && check == 2) {
+            System.out.println("Ödenecek tutar (TL): " + sale50);
+        }
+        else {
+            System.out.println("Ödenecek tutar (TL): " + sale20);
+        }
+    }
+}
