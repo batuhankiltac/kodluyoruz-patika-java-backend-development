@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int[] list = {15, 12, 788, 1, -1, -778, 2, 0};
+        System.out.println("Dizi elemanları: " + Arrays.toString(list));
+        int min = list[0];
+        int max = list[0];
+
+        int n;
+        System.out.print("Bir sayı giriniz: ");
+        n = input.nextInt();
+
+        for (int i : list) {
+            if (i < n && (n - i < 0 ? (n - i) * - 1 : n - i) < (n - min < 0 ? (n - min) * - 1 : n - min)) {
+                min = i;
+            }
+            if (i > n && (n - i < 0 ? (n - i) * - 1 : n - i) < (n - min < 0 ? (n - min) * - 1 : n - min)) {
+                max = i;
+            }
+        }
+        System.out.println("Girilen sayı: " + n);
+        System.out.println(n + "'den küçük ve " + n + " sayısına en yakın sayı: " + min);
+        System.out.println(n + "'den büyük ve " + n + " sayısına en yakın sayı: " + max);
+    }
+}
