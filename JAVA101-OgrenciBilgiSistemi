@@ -1,0 +1,163 @@
+public class Main {
+
+    
+    public static class Student {
+        String name;
+        String stuNo;
+        int classes;
+        Course mat;
+        Course fizik;
+        Course kimya;
+        double average;
+        boolean isPass;
+
+        Student(String name, String stuNo, int classes, Course mat, Course fizik, Course kimya) {
+            this.name = name;
+            this.stuNo = stuNo;
+            this.classes = classes;
+            this.mat = mat;
+            this.fizik = fizik;
+            this.kimya = kimya;
+            calcAverage();
+            this.isPass = false;
+        }
+
+        public void addBulkExamNote(int mat, int fizik, int kimya) {
+            if (mat >= 0 && mat <= 100) {
+                this.mat.note = mat;
+            }
+            if (fizik >= 0 && fizik <= 100) {
+                this.fizik.note = fizik;
+            }
+            if (kimya >= 0 && kimya <= 100) {
+                this.kimya.note = kimya;
+            }
+        }
+
+        public void addBulkVerbalNote(int mat, int fizik, int kimya) {
+            if (mat >= 0 && mat <= 100) {
+                this.mat.verbal = mat;
+            }
+            if (fizik >= 0 && fizik <= 100) {
+                this.fizik.verbal = fizik;
+            }
+            if (kimya >= 0 && kimya <= 100) {
+                this.kimya.verbal = kimya;
+            }
+        }
+
+        public void isPass() {
+            if (this.mat.note == 0 || this.fizik.note == 0 || this.kimya.note == 0 || this.mat.verbal == 0 || this.fizik.verbal == 0 || this.kimya.verbal == 0) {
+                System.out.println("Notlar tam olarak girilmemiş");
+            }
+            else {
+                this.isPass = isCheckPass();
+                printNote();
+                System.out.println("Ortalama : " + this.average);
+                if (this.isPass) {
+                    System.out.println("Sınıfı Geçti. ");
+                }
+                else {
+                    System.out.println("Sınıfta Kaldı.");
+                }
+            }
+        }
+
+        public void calcAverage() {
+            this.average = (((this.fizik.note * 0.80) + (this.fizik.verbal * 0.20)) + ((this.kimya.note * 0.80) + (this.kimya.verbal * 0.20)) + ((this.mat.note * 0.80) + (this.mat.verbal * 0.20))) / 3;
+        }
+
+        public boolean isCheckPass() {
+            calcAverage();
+            return this.average > 55;
+        }
+
+        public void printNote() {
+            System.out.println("**************************");
+            System.out.println("Öğrenci Adı: " + this.name);
+            System.out.println("Matematik Sınav Notu: " + this.mat.note + " Matematik Sözlü Notu: " + this.mat.verbal);
+            System.out.println("Fizik Sınav Notu: " + this.fizik.note + " Fizik Sözlü Notu: " + this.fizik.verbal);
+            System.out.println("Kimya Sınav Notu: " + this.kimya.note + " Kimya Sözlü Notu: " + this.kimya.verbal);
+        }
+    }
+
+
+    public static class Course {
+        Teacher courseTeacher;
+        String name;
+        String code;
+        String prefix;
+        int note;
+        int verbal;
+
+        public Course(String name, String code, String prefix) {
+            this.name = name;
+            this.code = code;
+            this.prefix = prefix;
+            this.note = 0;
+            this.verbal = 0;
+        }
+
+        public void addTeacher(Teacher t) {
+            if (this.prefix.equals(t.branch)) {
+                this.courseTeacher = t;
+                System.out.println("İşlem başarılı");
+            }
+            else {
+                System.out.println(t.name + " Akademisyeni bu dersi veremez.");
+            }
+        }
+
+        public void printTeacher() {
+            if (courseTeacher != null) {
+                System.out.println(this.name + " dersinin Akademisyeni : " + courseTeacher.name);
+            }
+            else {
+                System.out.println(this.name + " dersine Akademisyen atanmamıştır.");
+            }
+        }
+    }
+
+
+    public static class Teacher {
+        String name;
+        String mpNo;
+        String branch;
+
+        public Teacher(String name, String mpNo, String branch) {
+            this.name = name;
+            this.mpNo = mpNo;
+            this.branch = branch;
+        }
+    }
+
+
+    public static void main(String[] args) {
+        Course mat = new Course("Matematik", "MAT1", "MAT");
+        Course fizik = new Course("Fizik", "FZK1", "FZK");
+        Course kimya = new Course("Kimya", "KMY1", "KMY");
+
+        Teacher t1 = new Teacher("Descartes", "90550000000", "MAT");
+        Teacher t2 = new Teacher("Newton", "90550000001", "FZK");
+        Teacher t3 = new Teacher("Lavoisier", "90550000002", "KMY");
+
+        mat.addTeacher(t1);
+        fizik.addTeacher(t2);
+        kimya.addTeacher(t3);
+
+        Student s1 = new Student("KODLUYORUZ","246810", 3, mat, fizik, kimya);
+        s1.addBulkExamNote(80, 70, 60);
+        s1.addBulkVerbalNote(60, 70, 80);
+        s1.isPass();
+
+        Student s2 = new Student("PATİKA","135710", 4, mat, fizik, kimya);
+        s2.addBulkExamNote(90, 80, 70);
+        s2.addBulkVerbalNote(70, 80, 90);
+        s2.isPass();
+
+        Student s3 = new Student("DEV","123410", 5, mat, fizik, kimya);
+        s3.addBulkExamNote(40, 50, 60);
+        s3.addBulkVerbalNote(50, 55, 60);
+        s3.isPass();
+    }
+}
