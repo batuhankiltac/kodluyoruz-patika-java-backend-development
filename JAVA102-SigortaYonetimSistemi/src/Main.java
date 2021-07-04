@@ -9,9 +9,9 @@ public class Main {
         String email;
         String sifre;
 
-        System.out.print("Email giriniz : ");
+        System.out.print("Email giriniz: ");
         email = input.next();
-        System.out.print("Şifre giriniz : ");
+        System.out.print("Şifre giriniz: ");
         sifre = input.next();
 
         try {
