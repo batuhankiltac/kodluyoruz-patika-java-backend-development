@@ -6,8 +6,8 @@ public abstract class Account implements Comparable<Account> {
     AuthenticationStatus authenticationStatus = AuthenticationStatus.FAIL;
 
     final void showUserInfo() {
-        System.out.println("İsim : " + this.user.isim + " Soyisim : "+ this.user.soyisim + " Email : " + this.user.email +
-                " Şifre : " + this.user.sifre + " Meslek : " + this.user.meslek + " Yaş : "+ this.user.yas);
+        System.out.println("İsim: " + this.user.isim + " Soyisim: "+ this.user.soyisim + " Email: " + this.user.email +
+                " Şifre: " + this.user.sifre + " Meslek: " + this.user.meslek + " Yaş: "+ this.user.yas);
     }
 
     public void login(String email,String password) throws InvalidAuthenticationException {
@@ -15,7 +15,7 @@ public abstract class Account implements Comparable<Account> {
             authenticationStatus = AuthenticationStatus.SUCCESS;
         }
         else {
-            throw new InvalidAuthenticationException("Giriş Yapılamadı !");
+            throw new InvalidAuthenticationException("Giriş Yapılamadı!");
         }
     }
 
@@ -33,8 +33,12 @@ public abstract class Account implements Comparable<Account> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Account account = (Account) o;
         return Objects.equals(this.user, account.user) && Objects.equals(insuranceList, account.insuranceList) && authenticationStatus == account.authenticationStatus;
     }
