@@ -1,3 +1,3 @@
 public enum AuthenticationStatus {
-    SUCCESS,FAIL
+    SUCCESS, FAIL
 }
