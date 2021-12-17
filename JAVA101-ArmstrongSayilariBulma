@@ -1,54 +1,57 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-
-        System.out.print("Sayı Giriniz :");
-        int number = input.nextInt();
-
-        int basNumber = 0;
-        int tempNumber = number;
-        int basValue;
+        int number;
+        int baseNumber = 0;
+        int temporaryNumber;
+        int baseValue;
         int result = 0;
-        int basPow;
+        int basePow;
+        int counter = 0;
+        int total;
+        Scanner scanner = new Scanner(System.in);
 
-        while (tempNumber != 0) {
-            tempNumber /= 10;
-            basNumber++;
+        System.out.print("Sayı Giriniz: ");
+        number = scanner.nextInt();
+
+        temporaryNumber = number;
+        while (temporaryNumber != 0) {
+            temporaryNumber /= 10;
+            baseNumber++;
         }
 
-        tempNumber = number;
-        while (tempNumber != 0) {
-            basValue = tempNumber % 10;
-            basPow = 1;
-            for (int i = 1; i <= basNumber; i++) {
-                basPow *= basValue;
+        temporaryNumber = number;
+        while (temporaryNumber != 0) {
+            baseValue = temporaryNumber % 10;
+            basePow = 1;
+            for (int i = 1; i <= baseNumber; i++) {
+                basePow *= baseValue;
             }
-            result += basPow;
-            tempNumber /= 10;
+            result += basePow;
+            temporaryNumber /= 10;
         }
 
         if (result == number) {
-            System.out.println(number + " sayısı bir Armstrong sayıdır.");
+            System.out.println(number + " is an *ARMSTRONG* number.");
         }
         else {
-            System.out.println(number + " sayısı bir Armstrong sayısı değildir.");
+            System.out.println(number + " is not an *ARMSTRONG* number.");
         }
 
-        int numberCounter = 0;
-        int temp = number;
-        while (temp != 0) {
-            temp /= 10;
-            numberCounter++;
+        temporaryNumber = number;
+        while (temporaryNumber != 0) {
+            temporaryNumber /= 10;
+            counter++;
         }
-        System.out.println("Basamak adedi = " + numberCounter);
+        System.out.println(number + " is " + counter + " digit number.");
 
-        int toplam = 0;
+        total = 0;
         while (number > 0) {
-            toplam = toplam + (number % 10);
+            total += (number % 10);
             number /= 10;
         }
-        System.out.println("Basamak sayıları toplamı: " + toplam);
+        System.out.println("Sum of digits >> " + total);
     }
 }
