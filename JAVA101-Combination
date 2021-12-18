@@ -1,25 +1,23 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         int n;
         int m;
-
         int i;
         int j;
         int k;
-
         int nf = 1;
         int mf = 1;
         int df = 1;
+        Scanner scanner = new Scanner(System.in);
 
-        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the value of N: ");
+        n = scanner.nextInt();
 
-        System.out.print("n değerini girin: ");
-        n = input.nextInt();
-
-        System.out.print("m değerini girin: ");
-        m = input.nextInt();
+        System.out.print("Enter the value of M: ");
+        m = scanner.nextInt();
 
         int x = (n - m);
 
@@ -35,7 +33,7 @@ public class Main {
             df *= k;
         }
 
-        int C = nf / (mf * (df));
-        System.out.println("C("+ n + "," + m + ") = " + C);
+        int combination = nf / (mf * (df));
+        System.out.println("Combination("+ n + "," + m + ") = " + combination);
     }
 }
