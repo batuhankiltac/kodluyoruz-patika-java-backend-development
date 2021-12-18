@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class Main {
 
     public static boolean isFind(int[] arr, int value) {
@@ -12,21 +10,21 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        int[] list = {3, 7, 3, 3, 2, 9, 10, 21, 1, 33, 9, 1};
-        int[] duplicate = new int[list.length];
+        int[] list = {3, 7, 7, 3, 2, 9, 10, 21, 1, 33, 9, 1};
+        int[] duplicateList = new int[list.length];
         int startIndex = 0;
 
         for (int i = 0; i < list.length; i++) {
             for (int j = 0; j < list.length; j++) {
                 if ((i != j) && (list[i] == list[j])) {
-                    if (!isFind(duplicate, list[i])) {
-                        duplicate[startIndex++] = list[i];
+                    if (!isFind(duplicateList, list[i])) {
+                        duplicateList[startIndex++] = list[i];
                     }
                     break;
                 }
             }
         }
-        for (int value : duplicate){
+        for (int value : duplicateList){
             if (value != 0){
                 System.out.println(value);
             }
