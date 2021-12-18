@@ -1,30 +1,27 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
         int n;
         int m;
+        Scanner scanner = new Scanner(System.in);
 
-        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the matrix row count: ");
+        m = scanner.nextInt();
 
-        System.out.print("Matrisin satır sayısını girin: ");
-        m = input.nextInt();
-
-        System.out.print("Matrisin sütun sayısını girin: ");
-        n = input.nextInt();
+        System.out.print("Enter the matrix column count: ");
+        n = scanner.nextInt();
 
         int matrix[][] = new int[m][n];
-
-        System.out.println("\nMatrisin elemanlarını girin.");
-
+        System.out.println("\nEnter the elements of matrix.");
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                System.out.print("Matrisin " + (i + 1) + ". satır " + (j + 1) + ". sütun elemanını girin: ");
-                matrix[i][j] = input.nextInt();
+                System.out.print("Enter the elements of " + (i + 1) + ". row & elements of " + (j + 1) + ". column: ");
+                matrix[i][j] = scanner.nextInt();
             }
         }
-        System.out.println("\nMatris: ");
+        System.out.println("\nMatrix: ");
 
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
@@ -32,14 +29,14 @@ public class Main {
             }
             System.out.print("\n");
         }
-        int transpose[][] = new int[n][m];
 
+        int transpose[][] = new int[n][m];
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 transpose[j][i] = matrix[i][j];
             }
         }
-        System.out.println("Transpoze: ");
+        System.out.println("Transpose: ");
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
