@@ -1,14 +1,13 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
-
         int n;
+        Scanner scanner = new Scanner(System.in);
 
-        Scanner input = new Scanner(System.in);
-
-        System.out.print("Basamak adedi girin: ");
-        n = input.nextInt();
+        System.out.print("Enter number of digits: ");
+        n = scanner.nextInt();
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j <= i; j++) {
