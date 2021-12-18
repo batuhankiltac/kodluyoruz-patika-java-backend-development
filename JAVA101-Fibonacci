@@ -1,16 +1,17 @@
-public class Main {
-    public static void main(String[] args) {
+import java.util.Scanner;
 
+public class Main {
+
+    public static void main(String[] args) {
         int n1 = 0;
         int n2 = 1;
         int n3;
         int i;
         int n;
+        Scanner scanner = new Scanner(System.in);
 
-        Scanner input = new Scanner(System.in);
-
-        System.out.print("N sayısını girin: ");
-        n = input.nextInt();
+        System.out.print("Enter the N: ");
+        n = scanner.nextInt();
 
         System.out.print(n1 + " " + n2);
 
