@@ -1,6 +1,6 @@
 public class Main {
 
-    static boolean isPalindrom(int number) {
+    public static boolean isPalindrome(int number) {
         int temp = number;
         int reverseNumber = 0;
         int lastNumber;
@@ -14,6 +14,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        System.out.println("Palindrom sayı mı? : " + isPalindrom(505));
+        System.out.println("Is Palindrome? : " + isPalindrome(506));
     }
 }
