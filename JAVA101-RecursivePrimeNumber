@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class Main {
 
@@ -17,11 +17,11 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Bir sayı giriniz: ");
-        int n = input.nextInt();
+        System.out.print("Write a number: ");
+        int n = scanner.nextInt();
 
-        System.out.println(n + " " + (isPrime(n, n / 2) == 1 ? "sayısı ASAL değildir." : "sayısı ASAL'dır."));
+        System.out.println(n + (isPrime(n, n / 2) == 1 ? " is not a PRIME NUMBER." : " is a PRIME NUMBER."));
     }
 }
