@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class Main {
 
@@ -15,11 +15,11 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Bir sayı giriniz: ");
-        int i = input.nextInt();
-        
+        System.out.print("Write a number: ");
+        int i = scanner.nextInt();
+
         int k = i;
         patternMethod(i, k, false);
     }
