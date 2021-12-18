@@ -1,28 +1,29 @@
-import java.util.*;
+import java.util.Scanner;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         int[] list = {15, 12, 788, 1, -1, -778, 2, 0};
-        System.out.println("Dizi elemanları: " + Arrays.toString(list));
-        int min = list[0];
-        int max = list[0];
+        System.out.println("\nElements of array: " + Arrays.toString(list));
+        int minNumber = list[0];
+        int maxNumber = list[0];
 
-        int n;
-        System.out.print("Bir sayı giriniz: ");
-        n = input.nextInt();
+        int number;
+        System.out.print("Write a number: ");
+        number = scanner.nextInt();
 
         for (int i : list) {
-            if (i < n && (n - i < 0 ? (n - i) * - 1 : n - i) < (n - min < 0 ? (n - min) * - 1 : n - min)) {
-                min = i;
+            if (i < number && (number - i < 0 ? (number - i) * - 1 : number - i) < (number - minNumber < 0 ? (number - minNumber) * - 1 : number - minNumber)) {
+                minNumber = i;
             }
-            if (i > n && (n - i < 0 ? (n - i) * - 1 : n - i) < (n - min < 0 ? (n - min) * - 1 : n - min)) {
-                max = i;
+            if (i > number && (number - i < 0 ? (number - i) * - 1 : number - i) < (number - minNumber < 0 ? (number - minNumber) * - 1 : number - minNumber)) {
+                maxNumber = i;
             }
         }
-        System.out.println("Girilen sayı: " + n);
-        System.out.println(n + "'den küçük ve " + n + " sayısına en yakın sayı: " + min);
-        System.out.println(n + "'den büyük ve " + n + " sayısına en yakın sayı: " + max);
+        System.out.println("The number you entered: " + number);
+        System.out.println("The number less than " + number + " and closest to it is >> " + minNumber);
+        System.out.println("The number greater than " + number + " and closest to it is >> " + maxNumber);
     }
 }
