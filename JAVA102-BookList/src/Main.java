@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<Book> bookList = new ArrayList<>();
         ArrayList<Book> bookPageCount = new ArrayList<>();
-        HashMap<String,String> bookAuthorName = new HashMap<>();
+        HashMap<String, String> bookAuthorName = new HashMap<>();
 
         bookList.add(new Book("book1", 150, "author1", LocalDate.parse("2001-01-01")));
         bookList.add(new Book("book2", 240, "author2", LocalDate.parse("2002-02-02")));
